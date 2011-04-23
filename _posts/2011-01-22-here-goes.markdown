@@ -1,0 +1,7 @@
+--- 
+layout: post
+title: Here goes...
+---
+I've done it...a blog.  While there are other places i post to - twitter a bit, tumblr not so much - i wanted a place to post/talk/learn about development and code (i really hope to learn something from all of this).
+
+So here it is.  Hopefully i can contribute a tiny slice of something to the world.
