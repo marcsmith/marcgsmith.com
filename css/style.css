@@ -169,6 +169,9 @@ a:hover { color: #036; }
  */
 body {
 	background-color: #CCC;
+	background: -webkit-repeating-linear-gradient(left, #BBB 21px, #CCC 30px);
+	background: -moz-repeating-linear-gradient(top left 0deg, #BBB 21px, #CCC 30px) repeat scroll 0 0 transparent;
+	
 	color: black;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 100%;
@@ -233,6 +236,8 @@ nav a:hover, nav a.active {
 
 .post {
 	-webkit-box-shadow: #888 10px 10px 5px;
+	-moz-box-shadow: #888 10px 10px 5px;
+	box-shadow: #888 10px 10px 5px;
 	background-color: #EEE;
 	border: 1px solid #888;
 	margin-bottom: 20px;
