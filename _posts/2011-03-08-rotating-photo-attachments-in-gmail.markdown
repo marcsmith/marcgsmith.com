@@ -1,6 +1,6 @@
 --- 
 title: "Rotating Photo Attachments in Gmail"
-layout: default
+layout: post
 ---
 I have 2 young <a href="http://www.marcgsmith.com/wp-content/uploads/2011/03/dkce.jpg">kids</a>, so it's a given we take a lot of pictures in my house.  Unfortunately i spend most of my weekdays at work away from them, but i'm thankful that my wife keeps me up to speed, emailing me pics here & there throughout the day.
 

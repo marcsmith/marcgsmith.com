@@ -55,26 +55,50 @@
 				<ul class="posts">
   
     <li class="post group">
-		<h2><a href="/2011/07/12/jQuery-lazy-content-loader-plugin.html">jQuery lazy content loader plugin</a></h2>
-		<h3>12 Jul 2011</h3>
-		<p><h1 id='testes'>testes</h1>
+		<h1><a href="/2011/07/12/jQuery-lazy-content-loader-plugin.html">jQuery lazy content loader plugin</a></h1>
+		<h4>12 Jul 2011</h4>
+		<p><h2 id='why_did_i_do_this'>Why did i do this?</h2>
 
-<blockquote>
-<p>quote block quote this is</p>
-</blockquote>
+<p>While it&#8217;s debatable that the site i work on for my day job suffers from &#8220;content overload&#8221; on its homepage (i won&#8217;t tell you which side of the debate i&#8217;m on), the developers have been fortunate enough to get some time to work on site performance. It&#8217;s a shame that this isn&#8217;t a top priority all of the time, but i digress&#8230;</p>
 
-<p>this is a normal paragraph</p>
-<pre><code>
-this is a code block
-  test
-end
-</code></pre>
-<p>and another normal paragraph</p></p>
+<p>Anyhow, one thing we&#8217;ve pinpointed is that we have a great deal of content that&#8217;s not visible on the initial page paint - things in carousels, tabbed/accordion areas, etc. Our homepage is large. Way large. 197K last i checked. HFS, yeah&#8230;.that&#8217;s what i said.</p>
+
+<p>So i got to thinking&#8230;what if we load only what&#8217;s visible (to oversimplify), and load everything else &#8220;on demand&#8221; based on user actions or time? (sure, novel idea 10 years ago&#8230;don&#8217;t judge)</p>
+<!-- After doing the usual searching around for a nice (jQuery preferred) plugin to help out, i found that for what i wanted i couldn't find something robust/flexible enough.  So here's what i came up with to meet our needs, and hopefully yours. -->
+<h2 id='ok_what_assumptions_do_i_need_to_make_about_the_markup_in_my_page'>Ok, what assumptions do i need to make about the markup in my page?</h2>
+
+<p>Two things, really.</p>
+
+<ol>
+<li>This relates to the markup used for the content items, and the controls used to grab the external content to fill those items. Both the content and controls are each structured as unordered lists (&#60;ul&#62;), and each item in the content list has a corresponding item in the control list. Reasonable.</li>
+
+<li>Each of your control elements will have a jQuery data key/value attached to it, which specifies the URL where the content for that control item lives. OR, if you don&#8217;t want a URL attached to every single control item (and thus, need to make an ajax call for each item), you can bind a single data value to the &#60;ul&#62; of the controls and just one fetch will be made (presumably) for ALL of your data. See demos for examples.</li>
+</ol>
+
+<h2 id='how_will_it_work'>How will it work?</h2>
+
+<p>At its simplest, this will lazily load content (html, json, etc), based on a custom event that you specify - eg., a click, hover, whatever - you choose. The only other thing you&#8217;ll need to specify is a callback function that will be called once your content is successfully fetched (error handling/callback not finished yet). Your external data (and more, keep reading) is sent to your callback, and you can go nuts filling DOM elements with your goodies.</p>
+
+<p>There are a few options that make this super flexible, so let&#8217;s check them out.</p>
+
+<h1 id='demos'>DEMOS:</h1>
+
+<h2 id='click_trigger_tabs_in_a_tabbed_content_area'>Click (trigger) tabs in a tabbed content area</h2>
+
+<p>Just like it sounds - get content when user clicks a tab. Click for demo: <img class='group demo' src='./projects/lazyContentLoader/demo/images/demo_tabs.png' /></p>
+
+<h2 id='click_trigger_a_spot_in_a_content_carousel'>Click (trigger) a spot in a content carousel</h2>
+
+<p>Similar to the first example, but the callback here get a little fancier by sliding the carousel left or right. Click for demo: <img class='group demo' src='./projects/lazyContentLoader/demo/images/demo_caro.png' /></p>
+
+<h2 id='mouseenter_trigger_on_site_navigation_elements_and_with_2nd_trigger_mouseleave__callback_for_clearing_content_action'>Mouseenter (trigger) on site navigation elements, AND with 2nd trigger (mouseleave) &amp; callback for clearing content action</h2>
+
+<p>So, we get a little fancier here. The user directs mouse over our control element and content is fetched. Then, when the second trigger is invoked, the content area gets cleared by way of a second callback. You could use that second trigger for anything, i presume (not necessarily for clearing/hiding the fetched content). The great thing here is that <img class='group' src='./projects/lazyContentLoader/demo/images/demo_nav.png' /></p></p>
 	</li>
   
     <li class="post group">
-		<h2><a href="/2011/03/08/rotating-photo-attachments-in-gmail.html">Rotating Photo Attachments in Gmail</a></h2>
-		<h3>08 Mar 2011</h3>
+		<h1><a href="/2011/03/08/rotating-photo-attachments-in-gmail.html">Rotating Photo Attachments in Gmail</a></h1>
+		<h4>08 Mar 2011</h4>
 		<p><p>I have 2 young <a href='http://www.marcgsmith.com/wp-content/uploads/2011/03/dkce.jpg'>kids</a>, so it&#8217;s a given we take a lot of pictures in my house. Unfortunately i spend most of my weekdays at work away from them, but i&#8217;m thankful that my wife keeps me up to speed, emailing me pics here &amp; there throughout the day.</p>
 
 <p>I use gmail (you don&#8217;t? i&#8217;m sorry). And i bounce between Safari &amp; Chrome for exploring the web. Every time i get an email from home with pic(s) of the kiddies in it, here&#8217;s what i have to do&#8230;.</p>
@@ -91,8 +115,8 @@ end
 	</li>
   
     <li class="post group">
-		<h2><a href="/2011/03/01/easy-reading.html">Easy Reading</a></h2>
-		<h3>01 Mar 2011</h3>
+		<h1><a href="/2011/03/01/easy-reading.html">Easy Reading</a></h1>
+		<h4>01 Mar 2011</h4>
 		<p><p>I listen to a lot of podcasts (maybe too many), and i&#8217;m a huge fan of <a href='http://twitter.com/#!/danbenjamin'>Dan Benjamin</a>&#8217;s <a href='http://5by5.tv/'>5by5</a> stuff. <a href='http://5by5.tv/devshow'>The Dev Show</a> - a show where he &amp; co-host <a href='http://twitter.com/#!/jseifer'>Jason Seifer</a> provide useful development links from around the web - is what got me turned on to his stuff. On the show, Dan occasionally mentions how sites with white text on black backgrounds are a bother. I tend to agree (though probably to a much lesser extent), so i took it upon myself to mess around with writing Chrome &amp; Safari extensions (maybe i&#8217;ll write a FF one, too) to transform a &#8220;white text on black background&#8221; site (works for any site, really) to a &#8220;black text on white background&#8221; site. I&#8217;m calling it &#8220;btowb&#8221; for obvious (=lame) reasons.</p>
 
 <p>By no means is it exhaustive (i&#8217;m sure they could be improved upon), which is why they&#8217;re up on github in case you were so inclined to fork.</p>
@@ -101,8 +125,8 @@ end
 	</li>
   
     <li class="post group">
-		<h2><a href="/2011/01/22/here-goes.html">Here goes...</a></h2>
-		<h3>22 Jan 2011</h3>
+		<h1><a href="/2011/01/22/here-goes.html">Here goes...</a></h1>
+		<h4>22 Jan 2011</h4>
 		<p><p>I&#8217;ve done it&#8230;a blog.  While there are other places i post to - twitter a bit, tumblr not so much - i wanted a place to post/talk/learn about development and code (i really hope to learn something from all of this).</p>
 
 <p>So here it is.  Hopefully i can contribute a tiny slice of something to the world.</p></p>

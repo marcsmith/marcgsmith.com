@@ -174,7 +174,7 @@ body {
 	
 	color: black;
 	font-family: Helvetica, Arial, sans-serif;
-	font-size: 100%;
+	font-size: 0.95em;
 	margin-top: 20px;
 	padding: 0px;
 }
@@ -240,24 +240,37 @@ nav a:hover, nav a.active {
 	box-shadow: #888 10px 10px 5px;
 	background-color: #EEE;
 	border: 1px solid #888;
-	margin-bottom: 20px;
+	margin-bottom: 50px;
 	padding: 10px 30px;
 }
-
-h2 {
+h1, h2, h3, h4 {
+	margin-bottom: 4px;
+	color: #950;
+}
+h1 {
 	font-size: 1.25em;
 	line-height: 1.25em;
-	margin-bottom: 0px;
+}
+h1, h1 a, h1 a:visited  {
+	color: #444;
+}
+h2 {
+	font-size: 1.05em;
+	line-height: 1.05em;
 }
 
-h2 a, h2 a:visited {
-	color: black;
+h2 a, h2 a:visited, h3 a, h3 a:visited, h4 a, h4 a:visited {
+	color: #950;
 }
+
 h3 {
-	font-weight: normal;
 	font-size: 0.8em;
 	line-height: 0.8em;
-	margin-bottom: 0px;
+}
+h4 {
+	font-weight: normal;
+	font-size: 0.7em;
+	line-height: 0.7em;
 }
 
 a {
@@ -266,7 +279,7 @@ a {
 }
 
 a, a:active, a:visited {
-	color: #607890;
+	color: #046; /*607890;*/
 }
 
 .dateline {
@@ -274,14 +287,24 @@ a, a:active, a:visited {
 	font-style: italic;
 }
 
-p {
+p, .post ol, .post ul {
 	font-size: 0.85em;
 	line-height: 1.25em;
 	margin-bottom: 1.25em;
 	text-align: left;
 }
 
-
+.post img.demo:after {
+	position: absolute;
+	top: 200px;
+	left: 200px;
+	color: yellow;
+	font-size: 2.0em;
+	line-height: 2.0em;
+	opacity: 0.75;
+	content: 'DEMO';
+	text-shadow: #6374AB 20px -12px 2px;
+}
 
 /**
  * Non-semantic helper classes: please define your styles before this section.
